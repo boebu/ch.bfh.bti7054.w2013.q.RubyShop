@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Project Custom gems
+#Foundation
+gem 'compass-rails' # you need this or you get an err
+gem 'zurb-foundation', '~> 4.0.0'
