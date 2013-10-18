@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <%= f.fields_for :translations do |builder| %>
+        <%=  builder.label :language %>
+        <%=  builder.text_field :language %>
+        <%=  builder.label :name %>
+        <%=  builder.text_field :name %>
+  <%= builder.check_box :_destroy %>
+  <%= builder.label :_destroy, "Remove Question" %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
