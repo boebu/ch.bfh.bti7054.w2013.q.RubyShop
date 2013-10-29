@@ -1,5 +1,6 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
 #
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -14,8 +15,8 @@ development:
   database: rubyshop
   pool: 5
   username: bfh
-  password: L3goRubyW3bSh0p
-  host: 80.74.144.93
+  password: hulahop
+  host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
