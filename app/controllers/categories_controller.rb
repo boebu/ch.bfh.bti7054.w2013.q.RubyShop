@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    @language = Language.all
     @category = Category.new
   end
 
