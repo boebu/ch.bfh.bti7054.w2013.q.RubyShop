@@ -14,7 +14,7 @@
       <tr>
         <td><%= category.id %></td>
         <% category.translations.each do |trans| %>
-        <td><%=  trans.name %> (<%= trans.language %>)</td>
+        <td><%=  trans.name %></td>
         <% end  %>
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
