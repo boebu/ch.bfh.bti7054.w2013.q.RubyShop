@@ -27,16 +27,15 @@ ActiveRecord::Schema.define(version: 20131029173656) do
   create_table "category_translations", force: true do |t|
     t.string   "name"
     t.integer  "category_id"
-    t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "item_translations", force: true do |t|
+    t.string   "language"
     t.string   "title"
     t.text     "description"
     t.integer  "item_id"
-    t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(version: 20131029173656) do
   end
 
   create_table "languages", force: true do |t|
-    t.string   "language"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
