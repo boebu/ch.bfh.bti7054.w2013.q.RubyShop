@@ -14,11 +14,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    @language = Language.all
     @category = Category.new
   end
 
   # GET /categories/1/edit
   def edit
+    @language = Language.all
   end
 
   # POST /categories
@@ -69,6 +71,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params[:category].permit(translations_attributes: [:id, :name, :language, :_destroy])
+      params[:category].permit(translations_attributes: [:id, :name, :language_id, :_destroy])
     end
 end

@@ -1,7 +1,9 @@
 <div class="fields">
     <%= f.label :language %>
     <%= f.select :language_id, @language.collect { |l| [l.language, l.id] } %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
     <%= link_to_remove_fields "remove", f %>
 </div>
