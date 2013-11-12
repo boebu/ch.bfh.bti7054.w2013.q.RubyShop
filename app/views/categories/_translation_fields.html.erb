@@ -1,6 +1,7 @@
 <div class="fields">
 <%=  f.label :language %>
 <%=  f.text_field :language %>
+<%=  f.select :language, Language %>
 <%=  f.label :name %>
 <%=  f.text_field :name %>
 <%= link_to_remove_fields "remove", f %>
