@@ -1,15 +1,15 @@
 <%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    <% if @item.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <ul>
+                <% @item.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     <%= f.fields_for :translations do |builder| %>
         <%= render 'translation_fields', :f => builder %>
     <% end %>
@@ -17,8 +17,10 @@
     <%= f.text_field :price %>
     <%= f.label :imgSrc %>
     <%= f.text_field :imgSrc %>
+    <%= f.label :category_ids %>
+    <%= f.select :category_ids, @category.collect { |l| [l.translations.first.name, l.id] }, {}, {:multiple => true} %>
     <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
 <% end %>

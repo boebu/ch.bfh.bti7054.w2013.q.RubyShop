@@ -15,12 +15,14 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @language = Language.all
+    @category = Category.all
     @item = Item.new
   end
 
   # GET /items/1/edit
   def edit
     @language = Language.all
+    @category = Category.all
   end
 
   # POST /items
@@ -71,6 +73,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params[:item].permit(:price, :imgSrc ,translations_attributes: [:id, :title, :description, :language_id, :_destroy])
+      params[:item].permit(:price, :imgSrc, :category_ids ,translations_attributes: [:id, :title, :description, :language_id, :_destroy])
     end
+
 end
