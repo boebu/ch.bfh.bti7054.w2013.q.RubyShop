@@ -53,3 +53,9 @@ gem 'zurb-foundation', '~> 4.0.0'
 # devise User Authentication
 
 gem 'devise'
+
+# cancan authorization
+
+gem 'cancan'
+
+# rolemodel role mapping to users
