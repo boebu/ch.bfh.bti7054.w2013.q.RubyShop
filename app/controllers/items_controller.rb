@@ -73,7 +73,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params[:item].permit(:price, :imgSrc, :category_ids ,translations_attributes: [:id, :title, :description, :language_id, :_destroy])
+      params[:item].permit(:price, :imgSrc, :category_ids => [],translations_attributes: [:id, :title, :description, :language_id, :_destroy])
     end
 
 end
