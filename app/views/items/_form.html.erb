@@ -18,7 +18,7 @@
     <%= f.label :imgSrc %>
     <%= f.text_field :imgSrc %>
     <%= f.label :category_ids %>
-    <%= f.select :category_ids, @category.collect { |l| [l.translations.first.name, l.id] }, {}, {:multiple => true} %>
+    <%= f.select :category_ids, @category.collect { |l| [l.translations.first.name, l.id] }, {}, {:multiple => true, :class => 'chosen-select'} %>
     <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
     <div class="actions">
         <%= f.submit %>

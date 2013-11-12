@@ -16,8 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
+// add foundation
 $(document).foundation();
 
+// admin functions for extra fields
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
     $(link).closest(".fields").hide();
@@ -28,3 +30,6 @@ function add_fields(link, association, content) {
     var regexp = new RegExp("new_" + association, "g")
     $(link).parent().before(content.replace(regexp, new_id));
 }
+
+// add chosen select
+$(".chosen-select").chosen();
