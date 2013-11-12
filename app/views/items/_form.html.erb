@@ -10,17 +10,28 @@
             </ul>
         </div>
     <% end %>
-    <%= f.fields_for :translations do |builder| %>
-        <%= render 'translation_fields', :f => builder %>
-    <% end %>
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-    <%= f.label :imgSrc %>
-    <%= f.text_field :imgSrc %>
-    <%= f.label :category_ids %>
-    <%= f.select :category_ids, @category.collect { |l| [l.translations.first.name, l.id] }, {}, {:multiple => true, :class => 'chosen-select'} %>
-    <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
-    <div class="actions">
-        <%= f.submit %>
+    <div class="row">
+
+        <div class="large-12 columns">
+            <%= f.label :price %>
+            <%= f.text_field :price %>
+        </div>
+        <div class="large-12 columns">
+            <%= f.label :imgSrc %>
+            <%= f.text_field :imgSrc %>
+        </div>
+        <div class="large-12 columns">
+            <%= f.label :category_ids %>
+            <%= f.select :category_ids, @category.collect { |l| [l.translations.first.name, l.id] }, {}, {:multiple => true, :class => 'chosen-select'} %>
+        </div>
+        <%= f.fields_for :translations do |builder| %>
+            <%= render 'translation_fields', :f => builder %>
+        <% end %>
+        <div class="large-12 columns">
+            <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
+        </div>
+        <div class="large-12 columns">
+            <%= f.submit :submit, :class => 'button' %>
+        </div>
     </div>
 <% end %>

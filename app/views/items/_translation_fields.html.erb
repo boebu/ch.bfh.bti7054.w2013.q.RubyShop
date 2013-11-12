@@ -1,9 +1,17 @@
-<div class="fields">
-    <%= f.label :language %>
-    <%= f.select :language_id, @language.collect { |l| [l.language, l.id] } %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <%= link_to_remove_fields "remove", f %>
+<div class="fields large-12 columns">
+    <div class="large-2 columns">
+        <%= f.label :language %>
+        <%= f.select :language_id, @language.collect { |l| [l.language, l.id] } %>
+    </div>
+    <div class="large-4 columns">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div class="large-4 columns">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+    <div class="large-2 columns">
+        <%= link_to_remove_fields "remove", f %>
+    </div>
 </div>

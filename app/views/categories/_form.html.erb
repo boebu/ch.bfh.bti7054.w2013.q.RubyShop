@@ -1,20 +1,25 @@
 <%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+    <% if @category.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-      <ul>
-      <% @category.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-    <%= f.fields_for :translations do |builder| %>
-        <%= render 'translation_fields', :f => builder %>
+            <ul>
+                <% @category.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
     <% end %>
-    <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+
+        <%= f.fields_for :translations do |builder| %>
+            <%= render 'translation_fields', :f => builder %>
+        <% end %>
+        <div class="large-12 columns">
+            <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
+        </div>
+        <div class="large-12 columns">
+            <%= f.submit :submit, :class => 'button' %>
+        </div>
+    </div>
 <% end %>
