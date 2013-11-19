@@ -10,16 +10,13 @@
             </ul>
         </div>
     <% end %>
-    <div class="row">
-
-        <%= f.fields_for :translations do |builder| %>
-            <%= render 'translation_fields', :f => builder %>
-        <% end %>
-        <div class="large-12 columns">
-            <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
-        </div>
-        <div class="large-12 columns">
-            <%= f.submit :submit, :class => 'button' %>
-        </div>
+    <%= f.fields_for :translations do |builder| %>
+        <%= render 'translation_fields', :f => builder %>
+    <% end %>
+    <div class="large-12 columns">
+        <p><%= link_to_add_fields "Add Translation", f, :translations %> </p>
+    </div>
+    <div class="large-12 columns">
+        <%= f.submit :submit, :class => 'button' %>
     </div>
 <% end %>

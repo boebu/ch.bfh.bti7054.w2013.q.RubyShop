@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="large-12 columns">
+        <p id="notice"><%= notice %></p>
+    </div>
 
-<%= link_to 'Edit', edit_category_path(@category), class: 'button' %> |
-<%= link_to 'Back', categories_path, class: 'button' %>
+    <div class="large-12 columns">
+        <%= link_to 'Edit', edit_category_path(@category), class: 'button' %> |
+        <%= link_to 'Back', categories_path, class: 'button' %>
+    </div>
+
+</div>
