@@ -4,4 +4,6 @@ class Category < ActiveRecord::Base
   has_many :translations, :class_name => "CategoryTranslation", :dependent => :destroy
   has_and_belongs_to_many :items
   accepts_nested_attributes_for :translations, allow_destroy: true
+
+
 end

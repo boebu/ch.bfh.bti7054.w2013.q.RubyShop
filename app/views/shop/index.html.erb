@@ -1,0 +1,11 @@
+<h1>Shop#index</h1>
+<p>Find me in app/views/shop/index.html.erb</p>
+<p>choose Language</p>
+<% @languages.each do |lang| %>
+    <%= lang.language %>
+<% end %>
+<p>Current Language <%=  @languages.find(session[:language_id]).language %></p>
+
+<ul class="shopnav">
+  <%= render partial: 'navigation' %>
+</ul>
