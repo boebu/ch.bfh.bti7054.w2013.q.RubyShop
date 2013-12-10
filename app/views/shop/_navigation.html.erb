@@ -1,15 +1,17 @@
-
-  <% if !defined? cats %>
+<% if !defined? cats %>
     <% cats = @topcategories %>
-  <% end %>
+<% end %>
 
-  <% cats.each do |category| %>
-    <li rel="<%= category.id %>"><%= category.translations.find_by(language_id: session[:language_id]).name %>
-      <% if category.children.any?  %>
-        <ul>
-          <%= render partial: 'navigation', locals: {cats: category.children}  %>
-        </ul>
-      <% end %>
+<% cats.each do |category| %>
+    <li rel="<%= category.id %>">
+        <div>
+            <%= category.translations.find_by(language_id: session[:language_id]).name %>
+        </div>
+        <% if category.children.any? %>
+            <ul>
+                <%= render partial: 'navigation', locals: {cats: category.children} %>
+            </ul>
+        <% end %>
     </li>
-  <% end %>
+<% end %>
 

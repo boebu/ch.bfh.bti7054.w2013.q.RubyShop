@@ -1,15 +1,40 @@
+$border: 1px solid #000000;
+
+ul.shopnav {
+  border-bottom: $border;
+  border-left: $border;
+  border-right: $border;
+  float: left;
+  margin-bottom: 0;
+}
+
+.shopnav li {
+  list-style: none;
+}
 
 .shopnav ul {
   display: none;
+  margin: 0;
+  padding: 0;
 }
 
-.shopnav ul ul {
-  display: none;
+.shopnav li div {
+  border-top: $border;
 }
 
-.shopnav ul li {
-  margin-left: 10px;
+.shopnav li ul {
+   border-top: $border;
+ }
+
+.shopnav li ul li ul {
+  border: none;
 }
-.shopnav ul ul li {
-  margin-left: 20px;
+
+.shopnav li ul li div {
+  padding-left: 10px;
+  border: none;
+}
+
+.shopnav li ul li ul li div {
+  padding-left: 20px;
 }
