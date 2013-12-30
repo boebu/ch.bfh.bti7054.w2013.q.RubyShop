@@ -5,7 +5,7 @@
 <% cats.each do |category| %>
     <li rel="<%= category.id %>">
         <div>
-            <%= category.translations.find_by(language_id: session[:language_id]).name %>
+          <%= "+" if category.children.any? %><%= category.translations.find_by(language_id: session[:language_id]).name %>
         </div>
         <% if category.children.any? %>
             <ul>

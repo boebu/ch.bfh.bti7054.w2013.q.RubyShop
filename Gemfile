@@ -56,6 +56,6 @@ gem 'devise'
 
 # cancan authorization
 
-gem 'cancan'
+gem 'the_role', '~> 2.0.0'
 
 # rolemodel role mapping to users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029192522) do
+ActiveRecord::Schema.define(version: 20131230135042) do
 
   create_table "categories", force: true do |t|
     t.integer  "parent_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20131029192522) do
     t.string   "imgSrc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
   end
 
   create_table "languages", force: true do |t|
@@ -56,6 +57,15 @@ ActiveRecord::Schema.define(version: 20131029192522) do
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name",        null: false
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.text     "the_role",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,6 +94,7 @@ ActiveRecord::Schema.define(version: 20131029192522) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

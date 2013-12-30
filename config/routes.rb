@@ -1,4 +1,6 @@
 RubyShop::Application.routes.draw do
+  resources :orders
+
   get "shop/index"
   devise_for :users
   resources :categories
