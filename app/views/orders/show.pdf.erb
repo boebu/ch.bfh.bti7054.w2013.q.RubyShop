@@ -1,0 +1,5 @@
+<% if @order.nil?
+     @order = order
+end %>
+<h1>Order #<%= @order.id %></h1>
+<%= @order.items.inspect %>

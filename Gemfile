@@ -59,3 +59,8 @@ gem 'devise'
 gem 'the_role', '~> 2.0.0'
 
 # rolemodel role mapping to users
+
+# PDF util
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
