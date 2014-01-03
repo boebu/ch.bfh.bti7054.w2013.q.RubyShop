@@ -1,14 +1,33 @@
-<h1>Shop#index</h1>
-<p>Find me in app/views/shop/index.html.erb</p>
-<p>choose Language</p>
-<% @languages.each do |lang| %>
-    <%= lang.language %>
-<% end %>
-<p>Current Language <%=  @languages.find(session[:language_id]).language %></p>
-
-<ul class="shopnav">
-  <%= render partial: 'navigation' %>
-</ul>
-
-
-<%= link_add_to_cart("Test Item",Item.first.id) %>
+<div class="row">
+    <div class="large-12 columns">
+        <img src="/assets/logo.png"/>
+    </div>
+</div>
+<div class="row">
+    <div class="large-3 columns">
+        <ul class="shopnav">
+            <%= render partial: 'navigation' %>
+        </ul>
+    </div>
+    <div class="large-9 columns items">
+        <% @items.each do |item| %>
+            <div class="large-3 columns item">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <%= item.translations.find_by_language_id(session[:language_id]).title %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <%= image_tag('items/' + item.imgSrc) %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <%= link_add_to_cart(item.id) %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
