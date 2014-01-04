@@ -13,4 +13,5 @@ $("li").click(function(e) {
         parentLi = parentLi.parent('ul').parent('li');
     }
     console.log("Ids to fetch: " + ids.join(', '));
+    $.get("/items.json", {categories: ids});
 });
