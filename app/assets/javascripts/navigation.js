@@ -13,5 +13,7 @@ $(".shopnav li").click(function(e) {
         parentLi = parentLi.parent('ul').parent('li');
     }
     console.log("Ids to fetch: " + ids.join(', '));
-    $.get("/items.json", {categories: ids});
+    $.get("/items.json", {categories: ids}, function(data) {
+        $("#items").html(data);
+    });
 });
