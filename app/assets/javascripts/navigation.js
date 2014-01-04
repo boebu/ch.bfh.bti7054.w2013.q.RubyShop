@@ -2,7 +2,7 @@
  * Created by boebu on 12/3/13.
  */
 
-$("li").click(function(e) {
+$(".shopnav li").click(function(e) {
     e.stopPropagation();
     var obj = $(this);
     var parentLi = obj.parent('ul').parent('li');
