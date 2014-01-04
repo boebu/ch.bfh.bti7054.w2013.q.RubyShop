@@ -4,13 +4,14 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    if(params[:categories].nil?)
       @items = Item.all
-    else
-      @items = Item.includes(:categories).where(categories: {id: params[:categories].split(",")})
-      logger.debug @items
-    end
+  end
 
+  def shoplist
+    @items = Item.includes(:categories).where(categories: {id: params[:categories]})
+    respond_to do |format|
+      format.html {render layout: false}
+    end
   end
 
 

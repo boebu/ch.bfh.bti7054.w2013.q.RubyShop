@@ -1,4 +1,7 @@
 RubyShop::Application.routes.draw do
+
+  post "/set_lang" => 'shop#set_lang'
+  get "items/shoplist" => 'items#shoplist'
   resources :orders
 
   get "shop/index"
@@ -7,6 +10,8 @@ RubyShop::Application.routes.draw do
   resources :items
 
   resources :app_tests
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
