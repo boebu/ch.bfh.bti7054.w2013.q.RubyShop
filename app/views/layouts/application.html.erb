@@ -33,9 +33,9 @@
             <li>
                 <% @languages.each do |lang| %>
                     <% if session[:language_id] == lang.id %>
-                        <%= link_to lang.language, "#" + lang.language, :class => 'active' %>
+                        <%= link_to lang.language, "#" + lang.language, :class => 'language active' %>
                     <% else %>
-                        <%= link_to lang.language, "#" + lang.language %>
+                        <%= link_to lang.language, "#" + lang.language, :class => 'language' %>
                     <% end %>
                 <% end %>
             </li>
@@ -46,7 +46,7 @@
 
             <li>
                 <span><%= current_user.email %></span>
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
             </li>
         <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>

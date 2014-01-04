@@ -30,4 +30,11 @@
             </div>
         <% end %>
     </div>
+    <div id="cart" class="large-3 columns">
+      <div id="shoppingcart">
+
+      </div>
+      <%= link_to_clear_cart "Clear Cart" %>
+      <%= link_to "Order Now!", new_order_path, class: "button" %>
+    </div>
 </div>

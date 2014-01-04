@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 // add foundation
 $(document).foundation();
 

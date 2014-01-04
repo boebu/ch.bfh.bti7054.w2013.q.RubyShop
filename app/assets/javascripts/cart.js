@@ -12,12 +12,15 @@ function addToCart(itemid) {
         items.push(itemid);
         $.cookie("shopping-cart",items.join(","));
     }
+    displayCart();
 }
 
 function clearCart() {
-    $.cookie("shopping-cart");
+    $.cookie("shopping-cart", null);
+    displayCart();
 }
 
-function showCart(){
-
+function displayCart() {
+    $("#shoppingcart").html($.cookie("shopping-cart"));
 }
+

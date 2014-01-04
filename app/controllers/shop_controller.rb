@@ -1,15 +1,14 @@
 class ShopController < ApplicationController
   def index
-    session[:language_id] = Language.first.id
+    #session[:language_id] = Language.first.id
     @languages = Language.all
     @topcategories = Category.all.where(parent_id: nil)
     @items = Item.all
+  end
 
-    a = [1,1,2,3,4,4,4,6]
-    a.sort
-    a.group_by(&:inspect).map { |k,v| [k, v.length]}
-
-
+  def set_lang
+    session[:language_id] = Language.where(language: params[:lang]).first.id
+    render nothing: true
   end
 
 end
