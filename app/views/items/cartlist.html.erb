@@ -1,0 +1,7 @@
+<ul>
+<% @items.each do |item| %>
+
+          <li><%= @carthash[item.id] %> x <%= item.translations.find_by_language_id(session[:language_id]).title %> </li>
+
+<% end %>
+</ul>

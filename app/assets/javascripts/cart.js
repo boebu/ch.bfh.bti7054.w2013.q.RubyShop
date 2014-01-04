@@ -21,6 +21,13 @@ function clearCart() {
 }
 
 function displayCart() {
-    $("#shoppingcart").html($.cookie("shopping-cart"));
+    if($.cookie("shopping-cart") === null) {
+        $("#shoppingcart").html("<p>Cart is Empty</p>");
+    } else {
+        $.get("/items/cartlist", {itemids: $.cookie("shopping-cart").split(",")},function(data) {
+            $("#shoppingcart").html(data);
+        });
+    }
+
 }
 

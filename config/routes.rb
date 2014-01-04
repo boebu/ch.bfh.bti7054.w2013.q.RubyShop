@@ -2,6 +2,7 @@ RubyShop::Application.routes.draw do
 
   post "/set_lang" => 'shop#set_lang'
   get "items/shoplist" => 'items#shoplist'
+  get "items/cartlist" => 'items#cartlist'
   resources :orders
 
   get "shop/index"
