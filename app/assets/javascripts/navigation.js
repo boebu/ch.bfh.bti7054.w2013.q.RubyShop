@@ -5,14 +5,16 @@
 $(".shopnav li").click(function(e) {
     e.stopPropagation();
     var obj = $(this);
-    var parentLi = obj.parent('ul').parent('li');
     var ids = [obj.attr('rel')];
+    var fetchChildrenIds = function(parentLi) {
+        var childrenLi = parentLi.children('ul').children('li');
+        if (childrenLi.length) {
+            ids.push(childrenLi.attr('rel'));
+            fetchChildrenIds(childrenLi);
+        }
+    };
+    fetchChildrenIds(obj);
     obj.children("ul").toggle();
-    while (parentLi.length) {
-        ids.push(parentLi.attr('rel'));
-        parentLi = parentLi.parent('ul').parent('li');
-    }
-    console.log("Ids to fetch: " + ids.join(', '));
     $.get("/items/shoplist", {categories: ids}, function(data) {
         $("#items").html(data);
     });
