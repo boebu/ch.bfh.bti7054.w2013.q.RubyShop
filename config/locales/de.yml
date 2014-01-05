@@ -19,10 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  order_now: "Order Now!"
-  cart_empty: "Cart is empty"
-  clear_cart: "Clear cart"
-  sign_up: "Sign up"
-  sign_in: "Sign in"
-  sign_out: "Sign out"
+de:
+  order_now: "Jetzt bestellen!"
+  cart_empty: "Warenkorb ist leer"
+  clear_cart: "Warenkorb leeren"
+  sign_up: "Registrieren"
+  sign_in: "Anmelden"
+  sign_out: "Abmelden"

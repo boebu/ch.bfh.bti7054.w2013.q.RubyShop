@@ -15,15 +15,17 @@ class ItemsController < ApplicationController
   end
 
   def cartlist
-    carthash = {}
-    acart = params[:itemids].group_by(&:to_i).map{ |k,v| {k => v.length} }
-    acart.each do |c|
-      carthash.merge!(c)
+    if params[:itemids]
+      carthash = {}
+      acart = params[:itemids].group_by(&:to_i).map { |k, v| {k => v.length} }
+      acart.each do |c|
+        carthash.merge!(c)
+      end
+      @carthash = carthash
+      @items = Item.where(id: @carthash.keys)
     end
-    @carthash = carthash
-    @items = Item.where(id: @carthash.keys)
     respond_to do |format|
-      format.html {render layout: false}
+      format.html { render layout: false }
     end
   end
 
