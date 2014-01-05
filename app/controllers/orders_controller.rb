@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         cookies.delete "shopping-cart"
-        OrderMailer.mail_order(@order).deliver
+        OrderMailer.mail_order(@order,session[:language_id]).deliver
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
       else

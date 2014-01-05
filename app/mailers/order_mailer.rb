@@ -5,11 +5,11 @@ class OrderMailer < ActionMailer::Base
     mail(to: address, subject: "This is a TestMail")
   end
 
-  def mail_order(order)
+  def mail_order(order, language_id)
     mail(to: order.user.email, subject: "New Order \##{order.id}") do |format|
       format.html
       format.pdf do
-        attachments["LW_ORDER_#{order.id}.pdf"] = WickedPdf.new.pdf_from_string(render_to_string(template: 'orders/show.pdf.erb',locals: {order: order}))
+        attachments["LW_ORDER_#{order.id}.pdf"] = WickedPdf.new.pdf_from_string(render_to_string(template: 'orders/show.pdf.erb',locals: {order: order, language_id: language_id}))
       end
     end
   end
