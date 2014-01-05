@@ -32,10 +32,11 @@ nav a.active {
 .item {
   border: 1px solid #d9d9d9;
   background: #f2f2f2;
+  padding: 20px;
 }
 
 .item img {
-  padding: 10px 5px 5px;
+  margin-bottom: 5px;
 }
 
 .item h5 {
@@ -45,6 +46,7 @@ nav a.active {
 .item .button {
   display: inline-block;
   padding: 0.2em 0.3em;
+  margin: 0;
 }
 
 #cart {
