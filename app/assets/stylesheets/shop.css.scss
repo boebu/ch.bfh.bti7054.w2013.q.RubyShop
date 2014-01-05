@@ -24,3 +24,21 @@ nav span {
 nav a.active {
   color: #f00;
 }
+
+.item {
+  border: 1px solid #d9d9d9;
+  background: #f2f2f2;
+}
+
+.item img {
+  padding: 10px 5px 5px;
+}
+
+.item h5 {
+  color: #2795b6;
+}
+
+.item .button {
+  display: inline-block;
+  padding: 0.2em 0.3em;
+}

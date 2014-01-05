@@ -31,3 +31,8 @@ function displayCart() {
 
 }
 
+// init chart on page load
+$(function() {
+    displayCart();
+});
+

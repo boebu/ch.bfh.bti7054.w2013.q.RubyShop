@@ -17,7 +17,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "lego shop" %></title>
 
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -33,9 +33,9 @@
             <li>
                 <% @languages.each do |lang| %>
                     <% if session[:language_id] == lang.id %>
-                        <%= link_to lang.language, "#" + lang.language, :class => 'language active' %>
+                        <%= link_to lang.language, '', :class => 'language active' %>
                     <% else %>
-                        <%= link_to lang.language, "#" + lang.language, :class => 'language' %>
+                        <%= link_to lang.language, '', :class => 'language' %>
                     <% end %>
                 <% end %>
             </li>
