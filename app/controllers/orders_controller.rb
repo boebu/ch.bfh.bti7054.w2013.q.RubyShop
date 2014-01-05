@@ -48,6 +48,19 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user=current_user
+    carthash = {}
+    cart = cookies["shopping-cart"]
+
+      acart = cart.split(",").group_by(&:to_i).map{ |k,v| {k => v.length} }
+      acart.each do |c|
+        carthash.merge!(c)
+      end
+      @carthash = carthash
+      @items = Item.where(id: carthash.keys)
+      @items.each do |item|
+        @order.item_orders << ItemOrder.new(item_id: item.id, quantity: @carthash[item.id])
+      end
+
     respond_to do |format|
       if @order.save
         cookies.delete "shopping-cart"
