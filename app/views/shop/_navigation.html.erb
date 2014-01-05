@@ -5,7 +5,8 @@
 <% cats.each do |category| %>
     <li rel="<%= category.id %>">
         <div>
-          <%= "+" if category.children.any? %><%= category.translations.find_by(language_id: session[:language_id]).name %>
+            <span class="nav-toggle<%= " foundicon-plus" if category.children.any? %>"></span>
+            <%= category.translations.find_by(language_id: session[:language_id]).name %>
         </div>
         <% if category.children.any? %>
             <ul>

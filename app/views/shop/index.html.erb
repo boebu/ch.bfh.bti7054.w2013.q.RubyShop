@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 columns shop-logo">
         <img src="/assets/logo.png"/>
     </div>
 </div>
@@ -13,10 +13,13 @@
         <%= render partial: 'items/items' %>
     </div>
     <div id="cart" class="large-2 columns">
-      <div id="shoppingcart">
+        <div class="cart-header foundicon-cart"></div>
+        <div class="cart-content">
+            <div id="shoppingcart">
 
-      </div>
-      <%= link_to_clear_cart "Clear Cart" %>
-      <%= link_to "Order Now!", new_order_path, class: "button" %>
+            </div>
+            <%= link_to_clear_cart %>
+            <%= link_to "Order Now!", new_order_path, class: "button" %>
+        </div>
     </div>
 </div>

@@ -1,7 +1,4 @@
-/**
- * Created by boebu on 12/3/13.
- */
-
+// selection
 $(".shopnav li").click(function(e) {
     e.stopPropagation();
     var obj = $(this);
@@ -14,8 +11,17 @@ $(".shopnav li").click(function(e) {
         }
     };
     fetchChildrenIds(obj);
-    obj.children("ul").toggle();
+    $(".shopnav li").removeClass('active');
+    obj.addClass('active');
     $.get("/items/shoplist", {categories: ids}, function(data) {
         $("#items").html(data);
     });
+});
+
+//toggle
+$(".shopnav .nav-toggle").click(function(event) {
+    event.stopPropagation();
+    var obj = $(this);
+    obj.closest('li').children('ul').toggle();
+    obj.toggleClass('foundicon-plus').toggleClass('foundicon-minus');
 });

@@ -1,9 +1,4 @@
-$border: 1px solid #000000;
-
 ul.shopnav {
-  border-bottom: $border;
-  border-left: $border;
-  border-right: $border;
   float: left;
   margin-bottom: 0;
 }
@@ -18,24 +13,36 @@ ul.shopnav {
   padding: 0;
 }
 
+.shopnav .nav-toggle {
+  font-size: 8px;
+  width: 8px;
+  display: inline-block;
+}
+
 .shopnav li div {
-  border-top: $border;
   background: #D9D9D9;
+  border: 1px solid #bababa;
+  padding: 5px;
+  min-width: 150px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.shopnav li ul {
-   border-top: $border;
- }
+.shopnav li.active div {
+  background: #b6b6b6;
+}
 
-.shopnav li ul li ul {
+.shopnav li ul li div, .shopnav li.active ul li div, .shopnav li ul li.active ul li div {
+  padding-left: 15px;
+  background: #F2F2F2;
   border: none;
+  font-weight: normal;
 }
 
-.shopnav li ul li div {
-  padding-left: 10px;
-  border: none;
+.shopnav li ul li.active div {
+  background: #e3e3e3;
 }
 
-.shopnav li ul li ul li div {
-  padding-left: 20px;
+.shopnav li ul li ul li div, .shopnav li.active ul li ul li div, .shopnav li ul li.active ul li div {
+  padding-left: 30px;
 }
