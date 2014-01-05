@@ -5,17 +5,21 @@
 
     <table>
         <thead>
+        <tr>
             <th>ID</th>
             <th>Name</th>
             <th colspan="3">Actions</th>
+        </tr>
         </thead>
         <tbody>
             <% @categories.each do |category| %>
-                <td><%= category.id %></div>
-                <td><%=  category.translations.map(&:name).join(' / ') %></td>
-                <td><%= link_to 'Show', category %></td>
-                <td><%= link_to 'Edit', edit_category_path(category) %></td>
-                <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <tr>
+                    <td><%= category.id %></div>
+                    <td><%=  category.translations.map(&:name).join(' / ') %></td>
+                    <td><%= link_to 'Show', category %></td>
+                    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+                    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
             <% end %>
         </tbody>
     </table>
