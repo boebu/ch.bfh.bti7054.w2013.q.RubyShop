@@ -1,8 +1,5 @@
 class ShopController < ApplicationController
   def index
-    if(session[:language_id].nil?)
-      session[:language_id] = Language.first.id
-    end
     @languages = Language.all
     @topcategories = Category.all.where(parent_id: nil)
     @items = Item.all

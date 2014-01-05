@@ -6,7 +6,7 @@ module ShopHelper
   end
 
   def link_to_clear_cart()
-    link_to_function('',"clearCart()", class: 'button foundicon-trash')
+    link_to_function('',"clearCart()", {:class => 'button foundicon-trash', :title => (I18n.t "clear_cart")})
   end
 
 end
