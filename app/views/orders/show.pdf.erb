@@ -1,6 +1,9 @@
 <% if @order.nil?
      @order = order
    end %>
+<% if !defined? language_id
+    language_id = session[:language_id]
+    end %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,5 +1,7 @@
 RubyShop::Application.routes.draw do
 
+  resources :user_infos
+
   post "/set_lang" => 'shop#set_lang'
   get "items/shoplist" => 'items#shoplist'
   get "items/cartlist" => 'items#cartlist'

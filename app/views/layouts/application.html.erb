@@ -52,6 +52,12 @@
             <li><%= link_to t('sign_up'), new_user_registration_path %></li>
             <li><%= link_to t('sign_in'), new_user_session_path %></li>
         <% end %>
+        <!-- order -->
+        <% if params[:controller] == "shop" %>
+           <li><%= link_to t('orders'), "/orders" %></li>
+        <% else %>
+              <li><%= link_to "Shop", "/" %></li>
+        <% end %>
 
     </ul>
 </nav>

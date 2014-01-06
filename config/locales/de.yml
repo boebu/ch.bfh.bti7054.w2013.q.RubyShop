@@ -27,9 +27,13 @@ de:
   sign_in: "Anmelden"
   sign_out: "Abmelden"
   order: "Bestellung"
+  orders: "Bestellungen"
   quantity: "Menge"
   title: "Titel"
   single_price: "Stückpreis"
   total_price: "Gesamtpreis"
   grand_total: "Gesamtbetrag"
 
+  my_orders: "Meine Bestellungen"
+  order_date: "Bestelldatum"
+  show_quote: "Bestellung anzeigen"

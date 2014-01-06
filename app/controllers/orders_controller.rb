@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.where(user_id: current_user.id)
+    @languages = Language.all
   end
 
   # GET /orders/1
