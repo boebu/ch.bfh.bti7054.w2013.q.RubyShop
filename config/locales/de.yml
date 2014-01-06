@@ -26,3 +26,10 @@ de:
   sign_up: "Registrieren"
   sign_in: "Anmelden"
   sign_out: "Abmelden"
+  order: "Bestellung"
+  quantity: "Menge"
+  title: "Titel"
+  single_price: "Stückpreis"
+  total_price: "Gesamtpreis"
+  grand_total: "Gesamtbetrag"
+
