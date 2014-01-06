@@ -33,3 +33,10 @@ $(function () {
     displayCart();
 });
 
+// check if cart is empty on order now
+$('#ordernow').click(function (event) {
+    if($.cookie("shopping-cart") === null) {
+        event.preventDefault(); // Prevent link from following its href
+    }
+});
+
