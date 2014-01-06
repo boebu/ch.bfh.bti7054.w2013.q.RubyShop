@@ -47,6 +47,7 @@
             <li>
                 <span><%= current_user.email %></span>
                 <%= link_to t('sign_out'), destroy_user_session_path, method: :delete %>
+                <%= link_to t('my_settings'), edit_user_info_path(current_user.user_info) %>
             </li>
         <% else %>
             <li><%= link_to t('sign_up'), new_user_registration_path %></li>
