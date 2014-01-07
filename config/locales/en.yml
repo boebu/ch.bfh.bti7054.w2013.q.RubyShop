@@ -35,7 +35,7 @@ en:
   grand_total: "Grand total"
   my_orders: "My Orders"
   order_date: "Order Date"
-  show_quote: "Show Quote"
+  show_quote: "Show Order"
   my_settings: "My Settings"
   password: "Password"
   password_confirmation: "Password confirmation"
@@ -43,3 +43,4 @@ en:
   no_confirmation_instruction: "Didn't receive confirmation instructions?"
   no_unlock_instructions: "Didn't receive unlock instructions?"
   remember_me: "Remember me"
+  send_reset_password_info: "Send me reset password instructions"

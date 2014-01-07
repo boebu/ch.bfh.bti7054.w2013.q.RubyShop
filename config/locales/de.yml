@@ -43,3 +43,4 @@ de:
   no_confirmation_instruction: "Haben Sie keine bestätigungs Informationen erhalten?"
   no_unlock_instructions: "Haben Sie keine Informationen zur Entsperrung erhalten?"
   remember_me: "Angemeldet bleiben"
+  send_reset_password_info: "Senden Sie mir eine Anleitung zum zurücksetzten meines Passworts"
