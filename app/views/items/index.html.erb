@@ -16,7 +16,6 @@
                 <tr>
                     <td><%= item.id %></div>
                     <td><%=  item.translations.map(&:title).join(' / ') %></td>
-                    <td><%= link_to 'Show', item %></td>
                     <td><%= link_to 'Edit', edit_item_path(item) %></td>
                     <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
