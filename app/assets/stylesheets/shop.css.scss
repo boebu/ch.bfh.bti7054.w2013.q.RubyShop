@@ -78,6 +78,14 @@ nav a.active {
   padding: 0.3em 0.5em 0.5em;
 }
 
+#cart .button.remove-item {
+  padding: 0em 0.2em;
+}
+
 #cart .cart-content #shoppingcart li {
   list-style: none;
+}
+
+#cart .cart-buttons {
+  display: none;
 }

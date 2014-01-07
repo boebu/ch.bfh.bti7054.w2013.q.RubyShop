@@ -20,23 +20,34 @@ function clearCart() {
     displayCart();
 }
 
+function removeFromCart(id, all) {
+    var items = [],
+        found = false;
+    $.each($.cookie("shopping-cart").split(","), function (index, item) {
+        if (item != id || (!all && found)) {
+            items.push(item);
+        } else {
+            found = true;
+        }
+    });
+    $.cookie("shopping-cart", items.join(","));
+    displayCart();
+}
+
 function displayCart() {
     var items = $.cookie("shopping-cart") === null ? [] : $.cookie("shopping-cart").split(",");
     $.get("/items/cartlist", {itemids: items}, function (data) {
         $("#shoppingcart").html(data);
     });
-
+    if (items.length) {
+        $('#cart .cart-buttons').show();
+    } else {
+        $('#cart .cart-buttons').hide();
+    }
 }
 
 // init chart on page load
 $(function () {
     displayCart();
-});
-
-// check if cart is empty on order now
-$('#ordernow').click(function (event) {
-    if($.cookie("shopping-cart") === null) {
-        event.preventDefault(); // Prevent link from following its href
-    }
 });
 

@@ -65,7 +65,7 @@
 // Grid Variables
 //
 
-$row-width: 80em;
+$row-width: 90em;
 // $column-gutter: 1.875em;
 // $total-columns: 12;
 
@@ -235,7 +235,7 @@ $row-width: 80em;
 // $input-error-message-font-color-alt: #333;
 
 // We use these to build padding for buttons.
-// $button-med: emCalc(12px);
+$button-med: emCalc(4px);
 // $button-tny: emCalc(7px);
 // $button-sml: emCalc(9px);
 // $button-lrg: emCalc(16px);
@@ -248,7 +248,7 @@ $row-width: 80em;
 // $button-font-family: inherit;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
-// $button-font-med: emCalc(16px);
+$button-font-med: emCalc(14px);
 // $button-font-tny: emCalc(11px);
 // $button-font-sml: emCalc(13px);
 // $button-font-lrg: emCalc(20px);
@@ -1010,3 +1010,8 @@ $row-width: 80em;
 
 
 @import 'foundation';
+
+
+.button:visited {
+  color: #FFFFFF;
+}

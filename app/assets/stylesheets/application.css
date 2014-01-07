@@ -13,3 +13,7 @@
  *
  *= require foundation_and_overrides
  */
+
+input[type=checkbox] {
+    float: left;
+}
