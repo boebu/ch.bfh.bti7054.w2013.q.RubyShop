@@ -30,7 +30,7 @@ function removeFromCart(id, all) {
             found = true;
         }
     });
-    $.cookie("shopping-cart", items.join(","));
+    $.cookie("shopping-cart", items.length ? items.join(",") : null);
     displayCart();
 }
 
