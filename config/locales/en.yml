@@ -44,3 +44,5 @@ en:
   no_unlock_instructions: "Didn't receive unlock instructions?"
   remember_me: "Remember me"
   send_reset_password_info: "Send me reset password instructions"
+  firstname: "Firstname"
+  save_changes: "Save changes"
