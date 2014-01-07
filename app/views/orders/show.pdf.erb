@@ -51,12 +51,12 @@
         <tr class="<%= cycle('odd', 'even') -%>">
             <td class="right"><%= item.quantity %></td>
             <td><%= item.item.translations.find_by(language_id: language_id).title %></td>
-            <td class="right"><%= item.item.price %></td>
-            <td class="right"><%= total %></td>
+            <td class="right"><%= '$' + item.item.price.to_s() %></td>
+            <td class="right"><%= '$' + total.to_s() %></td>
         </tr>
     <% end %>
     <tr>
-        <td class="grandTotal right" colspan="4"><%= t('grand_total') + ': ' + grandTotal.to_s() %></td>
+        <td class="grandTotal right" colspan="4"><%= t('grand_total') + ': $' + grandTotal.to_s() %></td>
     </tr>
 </table>
 </body>
