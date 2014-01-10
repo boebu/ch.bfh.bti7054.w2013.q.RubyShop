@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140105162557) do
+ActiveRecord::Schema.define(version: 20140110075216) do
 
   create_table "categories", force: true do |t|
     t.integer  "parent_id"
@@ -32,14 +32,6 @@ ActiveRecord::Schema.define(version: 20140105162557) do
     t.datetime "updated_at"
   end
 
-  create_table "item_orders", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "quantity"
-    t.integer  "item_id"
-    t.integer  "order_id"
-  end
-
   create_table "item_translations", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -50,11 +42,14 @@ ActiveRecord::Schema.define(version: 20140105162557) do
   end
 
   create_table "items", force: true do |t|
-    t.decimal  "price",      precision: 10, scale: 0
+    t.decimal  "price",               precision: 10, scale: 0
     t.string   "imgSrc"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_id"
+    t.string   "imgSrc_file_name"
+    t.string   "imgSrc_content_type"
+    t.integer  "imgSrc_file_size"
+    t.datetime "imgSrc_updated_at"
   end
 
   create_table "languages", force: true do |t|

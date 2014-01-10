@@ -46,3 +46,4 @@ de:
   send_reset_password_info: "Senden Sie mir eine Anleitung zum zurücksetzten meines Passworts"
   firstname: "Vorname"
   save_changes: "Änderungen speichern"
+  no_orders: "Keine Bestellungen vorhanden"

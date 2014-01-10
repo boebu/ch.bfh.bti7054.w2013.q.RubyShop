@@ -46,3 +46,4 @@ en:
   send_reset_password_info: "Send me reset password instructions"
   firstname: "Firstname"
   save_changes: "Save changes"
+  no_orders: "No orders available"

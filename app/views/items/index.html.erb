@@ -2,26 +2,29 @@
     <div class="large-12 columns">
         <h1>Listing items</h1>
     </div>
-
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th colspan="2">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
+    <% if @items.size > 0 %>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
             <% @items.each do |item| %>
                 <tr>
                     <td><%= item.id %></div>
-                    <td><%=  item.translations.map(&:title).join(' / ') %></td>
-                    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= item.translations.map(&:title).join(' / ') %></td>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Destroy', item, method: :delete, data: {confirm: 'Are you sure?' } %></td>
                 </tr>
             <% end %>
-        </tbody>
-    </table>
+            </tbody>
+            </table>
+    <% else %>
+        <p>No categories available</p>
+    <% end %>
 
     <div class="large-12 columns">
         <%= link_to 'New Item', new_item_path, class: 'button' %>
