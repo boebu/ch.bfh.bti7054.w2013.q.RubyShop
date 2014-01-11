@@ -28,7 +28,7 @@ class UserInfosController < ApplicationController
 
     respond_to do |format|
       if @user_info.save
-        format.html { redirect_to @user_info, notice: 'User info was successfully created.' }
+        format.html { redirect_to root_path, notice: 'User info was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user_info }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class UserInfosController < ApplicationController
   def update
     respond_to do |format|
       if @user_info.update(user_info_params)
-        format.html { redirect_to @user_info, notice: 'User info was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'User info was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +69,6 @@ class UserInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_info_params
-      params.require(:user_info).permit(:firstname)
+      params.require(:user_info).permit(:firstName, :lastName, :street, :zip, :place, :phone)
     end
 end

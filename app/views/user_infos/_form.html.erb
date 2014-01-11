@@ -10,11 +10,34 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+ <div class="large-12 columns">
+  <div class="field large-4 columns">
     <%= f.label t('firstname') %><br>
     <%= f.text_field :firstName %>
   </div>
+    <div class="field large-4 columns">
+      <%= f.label t('lastname') %><br>
+      <%= f.text_field :lastName %>
+    </div>
+   <div class="field large-4 columns">
+     <%= f.label t('phone') %><br>
+     <%= f.text_field :phone %>
+   </div>
+   <div class="large-12 columns">
+   <div class="field large-4 columns">
+     <%= f.label t('street') %><br>
+     <%= f.text_field :street %>
+   </div>
+    <div class="field large-2 columns">
+      <%= f.label t('zip') %><br>
+      <%= f.text_field :zip %>
+    </div>
+    <div class="field large-4 columns">
+      <%= f.label t('place') %><br>
+      <%= f.text_field :place %>
+    </div>
+   </div>
+ </div>
   <div class="actions">
     <%= f.submit t('save_changes'), class: 'button' %>
   </div>

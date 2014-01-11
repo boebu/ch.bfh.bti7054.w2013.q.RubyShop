@@ -23,6 +23,11 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    if !check_user_info(current_user.user_info)
+      flash[:notice] =  t("fill_out")
+      redirect_to edit_user_info_path current_user.user_info
+    end
+
     @order = Order.new
     carthash = {}
     cart = cookies["shopping-cart"]
@@ -109,4 +114,15 @@ class OrdersController < ApplicationController
     def order_params
       params[:order]
     end
+
+  def check_user_info(userinfo)
+    if userinfo.nil?
+      return false;
+    else
+      userinfo.attributes.keys.each  do |key|
+        return false if (userinfo[key] == "")
+      end
+    end
+    return true;
+  end
 end
