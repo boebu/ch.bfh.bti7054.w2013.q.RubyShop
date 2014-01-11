@@ -2,7 +2,10 @@
     <ul>
         <% @items.each do |item| %>
             <li><%= @carthash[item.id] %>
-                x <%= item.translations.find_by_language_id(session[:language_id]).title %> </li>
+                x <%= item.translations.find_by_language_id(session[:language_id]).title %>
+                <%= link_remove_from_cart(item.id) %>
+                <%= link_remove_all_from_cart(item.id) %>
+            </li>
         <% end %>
     </ul>
 <% else %>

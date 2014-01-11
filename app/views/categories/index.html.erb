@@ -2,27 +2,29 @@
     <div class="large-12 columns">
         <h1>Listing categories</h1>
     </div>
-
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th colspan="3">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
+    <% if @categories.size > 0 %>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
             <% @categories.each do |category| %>
                 <tr>
                     <td><%= category.id %></div>
-                    <td><%=  category.translations.map(&:name).join(' / ') %></td>
-                    <td><%= link_to 'Show', category %></td>
-                    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-                    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= category.translations.map(&:name).join(' / ') %></td>
+                <td><%= link_to 'Edit', edit_category_path(category) %></td>
+                <td><%= link_to 'Destroy', category, method: :delete, data: {confirm: 'Are you sure?' } %></td>
                 </tr>
             <% end %>
-        </tbody>
-    </table>
+            </tbody>
+            </table>
+    <% else %>
+        <p>No categories available</p>
+    <% end %>
 
     <div class="large-12 columns">
         <%= link_to 'New Category', new_category_path, class: 'button' %>

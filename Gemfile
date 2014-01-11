@@ -64,3 +64,6 @@ gem 'the_role', '~> 2.0.0'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+
+# Image util
+gem "paperclip", "~> 3.0"

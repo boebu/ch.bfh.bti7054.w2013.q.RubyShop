@@ -5,7 +5,7 @@
             <div class="item">
                 <div class="row">
                     <div class="large-12 columns">
-                        <%= image_tag('items/' + item.imgSrc) %>
+                        <%= image_tag item.imgSrc.url(:medium) %>
                     </div>
                 </div>
                 <div class="row">

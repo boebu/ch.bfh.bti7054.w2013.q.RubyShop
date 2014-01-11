@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstName %><br>
+    <%= f.label t('firstname') %><br>
     <%= f.text_field :firstName %>
   </div>
     <div class="field">
@@ -36,6 +36,6 @@
       <%= f.text_field :phone %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('save_changes'), class: 'button' %>
   </div>
 <% end %>

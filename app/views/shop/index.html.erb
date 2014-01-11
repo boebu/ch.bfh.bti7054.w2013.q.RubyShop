@@ -1,9 +1,4 @@
 <div class="row">
-    <div class="large-12 columns shop-logo">
-        <img src="/assets/logo.png"/>
-    </div>
-</div>
-<div class="row">
     <div class="large-2 columns">
         <ul class="shopnav">
             <%= render partial: 'navigation' %>
@@ -18,8 +13,10 @@
             <div id="shoppingcart">
 
             </div>
-            <%= link_to_clear_cart %>
-            <%= link_to t('order_now'), new_order_path, class: "button", id: "ordernow" %>
+            <div class="cart-buttons">
+                <%= link_to_clear_cart %>
+                <%= link_to t('order_now'), new_order_path, class: "button", id: "ordernow" %>
+            </div>
         </div>
     </div>
 </div>

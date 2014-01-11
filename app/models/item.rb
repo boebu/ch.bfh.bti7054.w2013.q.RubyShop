@@ -4,5 +4,5 @@ class Item < ActiveRecord::Base
   accepts_nested_attributes_for :translations, :categories
   has_many :item_orders
   has_many :orders, through: :item_orders
-
+  has_attached_file :imgSrc, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 end
