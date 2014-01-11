@@ -1,10 +1,11 @@
 <div class="row">
+   <div class="large-12 columns">
+     <p id="notice"><%= notice %></p>
+   </div>
     <div class="large-12 columns">
         <h1><% t('my_settings') %></h1>
 
         <%= render 'form' %>
 
-        <%= link_to 'Show', @user_info %> |
-        <%= link_to 'Back', user_infos_path %>
     </div>
 </div>

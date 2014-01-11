@@ -36,7 +36,16 @@
     </style>
 </head>
 <body>
-<h1><%= t('order') %> #<%= @order.id %></h1>
+
+<div id="shippingaddr">
+  <%= @order.user.user_info.firstName %> <%= @order.user.user_info.lastName %><br/>
+  <%= @order.user.user_info.street %><br/>
+  <%= @order.user.user_info.zip %> <%= @order.user.user_info.place %><br/>
+
+
+</div>
+
+<h2><%= t('order') %> #<%= @order.id %></h2>
 <table>
     <tr>
         <th><%= t('quantity') %></th>
