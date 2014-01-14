@@ -59,3 +59,4 @@ en:
   back_to_orders: "To order summary"
   mail_subject: "Lego shop order "
   mail_text: "Thank you for your order. Attached you are receiving your order confirmation."
+  no_settings: "Please complete your data in \"My Settings\" before proceeding with your order."
