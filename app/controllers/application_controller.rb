@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :set_locale
+  before_filter :create_user_info
 
   def access_denied
     return render(text: 'access_denied:  not sufficient permissions')
@@ -18,6 +19,13 @@ class ApplicationController < ActionController::Base
       I18n.locale = :de
     else
       I18n.locale = :en
+    end
+  end
+
+  # creates an empty user_info if it does not exist
+  def create_user_info
+    if user_signed_in? and !current_user.user_info
+      current_user.user_info = UserInfo.new
     end
   end
 

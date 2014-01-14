@@ -54,3 +54,8 @@ de:
   zip: "PLZ"
   place: "Ort"
   shipping_address: "Lieferaddresse"
+  settings_updated: "Ihre Einstellungen wurden erfolgreich angepasst"
+  order_created: "Besten Dank für Ihre Bestellung. Sie sollten in Kürze eine E-Mail mit Ihrer Bestellung erhalten."
+  back_to_orders: "Zur Bestellübersicht"
+  mail_subject: "Lego Shop Bestellung "
+  mail_text: "Besten Dank für Ihre Bestellung. Im Anhang erhalten Sie Ihre Bestellbestätigung."

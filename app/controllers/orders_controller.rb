@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :login_required
+  before_action :assign_language
 
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.where(user_id: current_user.id)
-    @languages = Language.all
   end
 
   # GET /orders/1
@@ -71,7 +71,7 @@ class OrdersController < ApplicationController
       if @order.save
         cookies.delete "shopping-cart"
         OrderMailer.mail_order(@order,session[:language_id]).deliver
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to @order, notice: I18n.t("order_created") }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
@@ -124,5 +124,10 @@ class OrdersController < ApplicationController
       end
     end
     return true;
+  end
+
+  # assigns the language for templates
+  def assign_language()
+    @languages = Language.all
   end
 end

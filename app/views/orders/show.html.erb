@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="large-12 columns">
+        <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+        <%= link_to t('back_to_orders'), orders_path %>
+    </div>
+</div>

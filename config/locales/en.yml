@@ -54,3 +54,8 @@ en:
   zip: "ZIP"
   place: "Place"
   shipping_address: "Shipping Address"
+  settings_updated: "Your settings have been updated"
+  order_created: "Thank you for your order. You should shortly receive an e-mail with your order."
+  back_to_orders: "To order summary"
+  mail_subject: "Lego shop order "
+  mail_text: "Thank you for your order. Attached you are receiving your order confirmation."
