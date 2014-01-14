@@ -7,7 +7,6 @@ class CreateUserInfos < ActiveRecord::Migration
       t.string :street
       t.string :zip
       t.string :place
-      t.string :mail
       t.string :phone
       t.timestamps
     end
