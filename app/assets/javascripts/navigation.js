@@ -6,8 +6,11 @@ $(".shopnav li").click(function(e) {
     var fetchChildrenIds = function(parentLi) {
         var childrenLi = parentLi.children('ul').children('li');
         if (childrenLi.length) {
-            ids.push(childrenLi.attr('rel'));
-            fetchChildrenIds(childrenLi);
+            childrenLi.each(function(index, childLi){
+                childLi = $(childLi);
+                ids.push(childLi.attr('rel'));
+                fetchChildrenIds(childLi);
+            })
         }
     };
     fetchChildrenIds(obj);
