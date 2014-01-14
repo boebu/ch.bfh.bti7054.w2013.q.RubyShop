@@ -120,7 +120,7 @@ class OrdersController < ApplicationController
       return false;
     else
       userinfo.attributes.keys.each  do |key|
-        return false if (userinfo[key] == "")
+        return false if (userinfo[key] == "" || userinfo[key].nil?)
       end
     end
     return true;
