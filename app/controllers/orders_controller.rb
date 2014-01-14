@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if !check_user_info(current_user.user_info)
-      flash[:notice] =  t("fill_out")
+      flash[:notice] =  t("no_settings")
       redirect_to edit_user_info_path current_user.user_info
     end
 
