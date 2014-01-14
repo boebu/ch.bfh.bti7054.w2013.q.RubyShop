@@ -273,6 +273,6 @@ de:
   settings_updated: "Ihre Einstellungen wurden erfolgreich angepasst"
   order_created: "Besten Dank für Ihre Bestellung. Sie sollten in Kürze eine E-Mail mit Ihrer Bestellung erhalten."
   back_to_orders: "Zur Bestellübersicht"
-  mail_subject: "Lego Shop Bestellung "
-  mail_text: "Besten Dank für Ihre Bestellung. Im Anhang erhalten Sie Ihre Bestellbestätigung."
+  mail_subject: "Lego World Bestellung "
+  mail_text: "Besten Dank für Ihre Bestellung bei Lego World. Im Anhang erhalten Sie Ihre Bestellbestätigung."
   no_settings: "Bitte ergänzen Sie zuerst Ihre Angaben unter \"Meine Einstellungen\" bevor Sie mit der Bestellung fortfahren."
