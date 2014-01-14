@@ -29,6 +29,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # assigns the language for templates
+  def assign_language()
+    @languages = Language.all
+  end
+
   alias_method :login_required,     :authenticate_user!
   alias_method :role_access_denied, :access_denied
 

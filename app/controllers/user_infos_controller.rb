@@ -1,5 +1,6 @@
 class UserInfosController < ApplicationController
   before_action :set_user_info, only: [:show, :edit, :update, :destroy]
+  before_action :assign_language
 
   # GET /user_infos
   # GET /user_infos.json

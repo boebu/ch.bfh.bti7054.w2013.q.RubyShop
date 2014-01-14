@@ -126,8 +126,4 @@ class OrdersController < ApplicationController
     return true;
   end
 
-  # assigns the language for templates
-  def assign_language()
-    @languages = Language.all
-  end
 end
