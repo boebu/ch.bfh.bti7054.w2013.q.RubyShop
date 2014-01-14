@@ -1,0 +1,14 @@
+<% if !defined? cats %>
+    <% cats = @topcategories %>
+<% end %>
+
+<% cats.each do |category| %>
+    <% if @category.id != category.id %>
+        <option value="<%= category.id %>"<%= ' selected="selected"' if @category.parent_id == category.id %>>
+            <%= category.translations.find_by(language_id: session[:language_id]).name %>
+        </option>
+        <% if category.children.any? %>
+            <%= render partial: 'parent_select', locals: {cats: category.children} %>
+        <% end %>
+    <% end %>
+<% end %>

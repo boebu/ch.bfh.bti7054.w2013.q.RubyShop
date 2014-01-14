@@ -19,11 +19,13 @@ class CategoriesController < ApplicationController
   def new
     @language = Language.all
     @category = Category.new
+    @topcategories = Category.all.where(parent_id: nil)
   end
 
   # GET /categories/1/edit
   def edit
     @language = Language.all
+    @topcategories = Category.all.where(parent_id: nil)
   end
 
   # POST /categories
@@ -74,6 +76,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params[:category].permit(translations_attributes: [:id, :name, :language_id, :_destroy])
+      params[:category].permit(:parent_id, translations_attributes: [:id, :name, :language_id, :_destroy])
     end
 end

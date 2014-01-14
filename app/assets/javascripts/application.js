@@ -33,4 +33,4 @@ function add_fields(link, association, content) {
 }
 
 // add chosen select
-$(".chosen-select").chosen();
+$(".chosen-select").chosen({allow_single_deselect: true});

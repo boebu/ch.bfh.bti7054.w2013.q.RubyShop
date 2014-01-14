@@ -10,6 +10,13 @@
             </ul>
         </div>
     <% end %>
+    <div class="large-12 columns">
+        <%= f.label :parent %>
+        <select id="category_parent_id" class="chosen-select" name="category[parent_id]">
+            <option value=""></option>
+            <%= render partial: 'parent_select' %>
+        </select>
+    </div>
     <%= f.fields_for :translations do |builder| %>
         <%= render 'translation_fields', :f => builder %>
     <% end %>
